@@ -1,0 +1,20 @@
+.intro .socailLinks a,
+.aside:before,
+.about .title:after,
+.about .title:before {
+  background-color: red;
+}
+/* .logo span, */
+.active,
+.aside ul li a:hover {
+  color: red !important;
+}
+
+.aside .logo a::before {
+  border-left: 3px solid red;
+  border-top: 3px solid red;
+}
+.aside .logo a::after {
+  border-right: 3px solid red;
+  border-bottom: 3px solid red;
+}

@@ -1,0 +1,20 @@
+.about .title:after,
+.about .title:before,
+.intro .socailLinks a,
+.aside:before {
+  background-color: orange;
+}
+/* .logo span, */
+.active,
+.aside ul li a:hover {
+  color: orange !important;
+}
+
+.aside .logo a::before {
+  border-left: 3px solid orange;
+  border-top: 3px solid orange;
+}
+.aside .logo a::after {
+  border-right: 3px solid orange;
+  border-bottom: 3px solid orange;
+}
