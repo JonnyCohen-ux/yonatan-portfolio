@@ -11,6 +11,7 @@ body {
   outline: none;
   text-decoration: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 ::before,
 ::after {
@@ -41,32 +42,35 @@ body {
 .colorChanger {
   position: fixed;
   right: -160px;
-  top: 35px;
+  top: 50%;
   width: 200px;
   height: 100px;
   /* background-color: red; */
   display: flex;
   transition: 0.5s ease-in;
+  z-index: 10;
 }
 .colorChanger .changeColorSet {
   width: 40px;
-  height: 40px;
-  border-left: 1px solid #eee;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  height: 60px;
+  border-left: 3px solid #000;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+  border-right: 3px solid #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #333;
+  background-color: #eee;
   border-radius: 2px;
   /* background-color: orchid; */
   cursor: pointer;
+  color: #333;
 }
 .colorChanger .buttons {
-  background-color: #333;
-  border-left: 1px solid #eee;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  background-color: #eee;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
   width: 160px;
   display: flex;
 }
@@ -81,7 +85,7 @@ body {
 .fa,
 .far,
 .fas {
-  color: #eee;
+  color: #333;
   font-size: 22px;
 }
 
@@ -94,7 +98,7 @@ body {
   margin: 0 5px;
 }
 
-.burger {
+.burgerMenu {
   width: 40px;
   height: 40px;
   border: 1px solid #eee;
@@ -111,11 +115,19 @@ body {
   cursor: pointer;
   display: none;
 }
-.burger div {
+.burgerMenu div {
   width: 80%;
   height: 8px;
   background-color: #333;
   margin: 4px 0;
+}
+
+::-webkit-scrollbar {
+  background-color: #333;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #eee;
 }
 
 /* Aside */
@@ -213,6 +225,7 @@ body {
   min-height: 100vh;
   display: flex;
   display: -ms-flexbox;
+  position: relative;
 }
 
 .home .intro {
@@ -243,30 +256,84 @@ body {
 
 /* Home */
 
-.about .title h1 {
-  font-size: 35px;
+.backgroundSlogen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
-.about .title {
-  position: relative;
+.backgroundSlogen {
+  font-size: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* About */
+
+.aboutContent {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+.aboutLeft {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+
+.aboutLeft h1 {
+  font-size: 120px;
+  text-align: center;
+  line-height: 80px;
+  font-weight: 700;
+  margin-top: 50px;
+}
+.aboutLeft span {
+  font-size: 160px;
+  display: inline;
+  transform: rotate(90deg);
+  margin-left: -40px;
+  font-weight: 700;
+}
+
+.aboutRight {
+  /* display: flex; */
+  /* display: -ms-flexbox; */
+  /* -ms-flex-wrap: wrap; */
+  /* flex-wrap: wrap; */
+  /* background-color: seagreen; */
+  flex-basis: 100%;
+  flex-shrink: inherit;
+  display: grid;
+  grid-template-row: 1fr 1fr;
+}
+.aboutRight p {
   display: inline-block;
+  border-bottom: 1px solid #eee;
+  padding: 5px;
+  font-weight: bold;
+  color: #eee;
+  margin: 8px 0;
 }
-.about .title:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 80%;
-  height: 3px;
-  background-color: red;
+.aboutRight p span {
+  color: #fff;
+  font-weight: 100;
+  padding-left: 5px;
 }
-.about .title:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -15px;
-  width: 60%;
-  height: 3px;
-  background-color: red;
+
+.aboutSkills {
+  display: flex;
+  justify-content: space-between;
+}
+.aboutSkills .skillsRight,
+.skillsLeft {
+  flex-basis: 100%;
+}
+.aboutSkills .skillsRight h1 {
+  font-size: 140px;
+  line-height: 250px;
 }
 
 /* Responsive */
@@ -280,8 +347,30 @@ body {
   .mainContent {
     padding: 0;
   }
-  .burger {
+  .burgerMenu {
     display: flex;
+  }
+  .aboutContent,
+  .aboutSkills {
+    flex-direction: column;
+  }
+  .aboutLeft h1 {
+    font-size: 50px;
+    text-align: center;
+    line-height: 80px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .aboutLeft span {
+    font-size: 70px;
+    display: inline;
+    transform: rotate(90deg);
+    margin-left: -10px;
+    font-weight: 700;
+  }
+  .aboutSkills .skillsRight h1 {
+    font-size: 80px;
+    line-height: 250px;
   }
 }
 

@@ -6,7 +6,9 @@
 }
 /* .logo span, */
 .active,
-.aside ul li a:hover {
+.aside ul li a:hover,
+.aboutRight p,
+.aboutLeft span {
   color: red !important;
 }
 

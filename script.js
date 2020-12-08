@@ -1,13 +1,11 @@
 const styles = document.querySelectorAll(".style");
 const changeColorButtons = document.querySelectorAll(".changeColorButton");
-
 const changeColorSet = document.querySelector(".changeColorSet");
 const colorChanger = document.querySelector(".colorChanger");
-const burgerMenu = document.querySelector(".burger");
+const burgerMenu = document.querySelector(".burgerMenu");
 const aside = document.querySelector(".aside");
-// console.log(styles);
-console.log(changeColorButtons);
 
+// Change Theme Color
 for (let i = 0; i < styles.length; i++) {
   let colorSelected = styles[i].className.split(" ")[1];
   for (let j = 0; j < changeColorButtons.length; j++) {
@@ -22,11 +20,12 @@ for (let i = 0; i < styles.length; i++) {
   }
 }
 
+// Open ColorSwicher
 changeColorSet.addEventListener("click", () => {
-  console.log("test");
   colorChanger.classList.toggle("openColorCahnger");
 });
 
+// Open Sidebar Menu On Mobile
 burgerMenu.addEventListener("click", () => {
   aside.classList.toggle("openSideBar");
 });
