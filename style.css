@@ -94,6 +94,30 @@ body {
   margin: 0 5px;
 }
 
+.burger {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #eee;
+  background-color: #eee;
+  position: fixed;
+  border-radius: 3px;
+  top: 35px;
+  z-index: 11;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+.burger div {
+  width: 80%;
+  height: 8px;
+  background-color: #333;
+  margin: 4px 0;
+}
+
 /* Aside */
 .aside {
   width: 270px;
@@ -104,6 +128,7 @@ body {
   top: 0;
   z-index: 10;
   padding: 30px;
+  transition: 0.3s;
   /* border-right: 1px solid red; */
 }
 .aside:before {
@@ -250,8 +275,16 @@ body {
   .aside {
     left: -270px;
     /* display: none; */
+    width: 200px;
   }
   .mainContent {
     padding: 0;
   }
+  .burger {
+    display: flex;
+  }
+}
+
+.openSideBar {
+  left: 0;
 }

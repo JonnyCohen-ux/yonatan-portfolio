@@ -3,6 +3,8 @@ const changeColorButtons = document.querySelectorAll(".changeColorButton");
 
 const changeColorSet = document.querySelector(".changeColorSet");
 const colorChanger = document.querySelector(".colorChanger");
+const burgerMenu = document.querySelector(".burger");
+const aside = document.querySelector(".aside");
 // console.log(styles);
 console.log(changeColorButtons);
 
@@ -23,4 +25,8 @@ for (let i = 0; i < styles.length; i++) {
 changeColorSet.addEventListener("click", () => {
   console.log("test");
   colorChanger.classList.toggle("openColorCahnger");
+});
+
+burgerMenu.addEventListener("click", () => {
+  aside.classList.toggle("openSideBar");
 });
