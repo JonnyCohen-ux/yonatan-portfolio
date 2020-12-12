@@ -4,6 +4,7 @@ body {
   line-height: 1.5;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 * {
   margin: 0;
@@ -22,12 +23,44 @@ body {
   min-height: 100vh;
   background-color: #121212;
   padding: 0 30px;
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  left: 270px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 1;
 }
 
-.mainContent {
+.acticeSection {
+  z-index: 2;
+  opacity: 1;
+  animation: 0.5s ease-in slideSection;
+}
+
+@-webkit-keyframes slideSection {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideSection {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* .mainContent {
   padding-left: 270px;
   color: #fff;
-}
+} */
 
 .container {
   max-width: 1100px;
@@ -344,8 +377,8 @@ body {
     /* display: none; */
     width: 200px;
   }
-  .mainContent {
-    padding: 0;
+  .section {
+    left: 0;
   }
   .burgerMenu {
     display: flex;

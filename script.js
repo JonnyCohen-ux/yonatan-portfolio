@@ -4,6 +4,10 @@ const changeColorSet = document.querySelector(".changeColorSet");
 const colorChanger = document.querySelector(".colorChanger");
 const burgerMenu = document.querySelector(".burgerMenu");
 const aside = document.querySelector(".aside");
+const navLinks = document.querySelectorAll(".nav > li a");
+const sections = document.querySelectorAll(".section");
+
+console.log(navLinks);
 
 // Change Theme Color
 for (let i = 0; i < styles.length; i++) {
@@ -29,3 +33,34 @@ changeColorSet.addEventListener("click", () => {
 burgerMenu.addEventListener("click", () => {
   aside.classList.toggle("openSideBar");
 });
+
+// Add active class
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("click", () => {
+    for (let j = 0; j < navLinks.length; j++) {
+      navLinks[j].classList.remove("active");
+    }
+    navLinks[i].classList.add("active");
+  });
+}
+
+// Plceholder
+const nav = document.querySelector(".nav"),
+  navlist = document.querySelectorAll("li");
+for (let i = 0; i < navlist.length; i++) {
+  const aLinks = navlist[i].querySelector("a");
+  aLinks.addEventListener("click", function () {
+    console.log(this);
+
+    showSection(this);
+  });
+}
+
+function showSection(sect) {
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].classList.remove("acticeSection");
+  }
+  const target = sect.getAttribute("href").split("#")[1];
+
+  document.querySelector("#" + target).classList.add("acticeSection");
+}
