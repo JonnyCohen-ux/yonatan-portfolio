@@ -37,7 +37,7 @@ body {
 .acticeSection {
   z-index: 2;
   opacity: 1;
-  animation: 0.5s ease-in slideSection;
+  animation: 1s ease-in slideSection;
 }
 
 @-webkit-keyframes slideSection {
@@ -263,6 +263,7 @@ body {
 
 .home .intro {
   text-align: center;
+  padding-left: 270px;
 }
 
 .home .intro h1 {
