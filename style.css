@@ -381,6 +381,9 @@ body {
   .section {
     left: 0;
   }
+  .home .intro {
+    padding-left: 0;
+  }
   .burgerMenu {
     display: flex;
   }
